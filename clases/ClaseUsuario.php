@@ -14,7 +14,7 @@
 
     }
 
-    public function CrearUsuario($nombre=null,$apellido=null,$cedula,$correo,$genero=null,$fecha_n=null,$contrasena=null) {
+    public function CrearUsuario($nombre,$apellido,$cedula,$correo,$genero=null,$fecha_n=null,$contrasena) {
       
       $sql = "INSERT INTO usuarios(nombre,apellido,cedula,correo,genero,fecha_nac,contrasena) VALUES('".$nombre."','".$apellido."','".$cedula."','".$correo."','".$genero."','".$fecha_n."','".md5($contrasena)."')";
       $this->datos = mysqli_query($this->mysqli, $sql);

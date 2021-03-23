@@ -23,7 +23,7 @@
       $cedula_unica = $usuario->ValorUnico('usuarios','cedula',$cedula);
       $correo_unico = $usuario->ValorUnico('usuarios','correo',$correo);
 
-      if(!empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0 and !empty($contra) and strlen($contra) > 5 and $contra == $confirmar and $correo_unico == 0){
+      if(!empty($nombre) and !empty($apellido) and !empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0 and !empty($contra) and strlen($contra) > 5 and $contra == $confirmar and $correo_unico == 0){
 
         $resultado = $usuario->CrearUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$contra);
 
@@ -49,7 +49,6 @@
 
             <p class="card-description">
               - Todos los datos marcados con <code>(*)</code> son obligatorios.<br/>
-              - Si deja en blanco los campos <strong>Contraseña</strong> y <strong>Confirmar</strong>, se le asignara al nuevo usuario la clave por defecto <code>1234</code>.
             </p>
             <?php
 
@@ -60,6 +59,30 @@
                     echo '
                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Cédula es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+
+                  //Nombre no vacio
+                  elseif(empty($nombre)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Nombre es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+
+                  //Apellido no vacio
+                  elseif(empty($apellido)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Apellido es obligatorio.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -156,7 +179,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
-                  <label class="col-sm-3 col-form-label">Nombre</label>
+                  <label class="col-sm-3 col-form-label">Nombre <code>(*)</code></label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control" name="nombre" value="<?php echo isset($_POST['nombre']) ? $_POST['nombre'] : '' ?>"/>
                   </div>
@@ -164,7 +187,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group row">
-                  <label class="col-sm-3 col-form-label">Apellido</label>
+                  <label class="col-sm-3 col-form-label">Apellido <code>(*)</code></label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control" name="apellido" value="<?php echo isset($_POST['apellido']) ? $_POST['apellido'] : '' ?>"/>
                   </div>
@@ -222,7 +245,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Fecha nac.</label>
                   <div class="col-sm-9">
-                    <input class="form-control" type="date" name="fecha_nacimiento" placeholder="dd/mm/yyyy" value="<?php echo isset($_POST['fecha_nacimiento']) ? $_POST['fecha_nacimiento'] : '' ?>"/>
+                    <input class="form-control" type="date" value="<?php echo date('Y-m-d'); ?>"  name="fecha_nacimiento"/>
                   </div>
                 </div>
               </div>
@@ -236,9 +259,9 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
-                  <label class="col-sm-3 col-form-label">Contraseña</label>
+                  <label class="col-sm-3 col-form-label">Contraseña <code>(*)</code></label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="contra"/>
+                    <input type="password" class="form-control" name="contra"/>
                   </div>
                 </div>
               </div>
@@ -246,7 +269,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Confirmar</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" name="confirmar" />
+                    <input type="password" class="form-control" name="confirmar" />
                   </div>
                 </div>
               </div>

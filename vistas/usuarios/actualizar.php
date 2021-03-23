@@ -24,7 +24,7 @@
       $cedula_unica = $usuario->ValorUnicoActualizable('usuarios','cedula',$cedula,$_GET['id']);
       $correo_unico = $usuario->ValorUnicoActualizable('usuarios','correo',$correo,$_GET['id']);
 
-      if(!empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0){
+      if(!empty($nombre) and !empty($apellido) and !empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0){
 
         $resultado = $usuario->ActualizarUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$_GET['id']);
 
@@ -59,6 +59,29 @@
                     echo '
                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Cédula es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+                  //Nombre no vacio
+                  elseif(empty($nombre)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Nombre es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+
+                  //Apellido no vacio
+                  elseif(empty($apellido)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Apellido es obligatorio.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -112,7 +135,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
-                  <label class="col-sm-3 col-form-label">Nombre</label>
+                  <label class="col-sm-3 col-form-label">Nombre <code>(*)</code></label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control" name="nombre" value="<?php echo $datos['nombre'] ?>"/>
                   </div>
@@ -120,7 +143,7 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group row">
-                  <label class="col-sm-3 col-form-label">Apellido</label>
+                  <label class="col-sm-3 col-form-label">Apellido <code>(*)</code></label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control" name="apellido" value="<?php echo $datos['apellido'] ?>"/>
                   </div>
