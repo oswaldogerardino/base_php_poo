@@ -28,6 +28,7 @@
 
         $resultado = $usuario->ActualizarUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$_GET['id']);
 
+        setcookie("msj_usuario", "Actualización exitosa", time()+ 1,'/');
         header("Location: ./lista.php");
   
       }

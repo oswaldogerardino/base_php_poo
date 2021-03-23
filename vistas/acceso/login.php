@@ -28,6 +28,7 @@
   
       }else{
         
+        setcookie("msj_login", "Datos incorrectos, intente otra vez!", time()+ 1,'/');
         header("Location: ./login.php");
 
       }
@@ -67,6 +68,20 @@
                 <img src="../../assets/images/favicon.jpg" alt="logo">
               </div>
               <h4>Ingrese sus datos para continuar...</h4>
+
+              <?php if(isset($_COOKIE['msj_login'])){ ?>
+              
+                <div class="alert alert-danger" role="alert">
+                  <?php echo $_COOKIE['msj_login']; ?>
+                </div>
+
+              <?php }elseif(isset($_COOKIE['msj_login_out'])){ ?>
+              
+                <div class="alert alert-info" role="alert">
+                  <?php echo $_COOKIE['msj_login_out']; ?>
+                </div>
+                
+              <?php } ?>
 
               <form action="./login.php" method="POST" class="pt-3">
                 <input type="hidden" name="submit" value="add" >

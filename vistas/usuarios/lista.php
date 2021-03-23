@@ -16,6 +16,15 @@
             <p class="card-description">
               Listado de usuarios del sistema.
             </p>
+
+            <?php if(isset($_COOKIE['msj_usuario'])){ ?>
+              
+              <div class="alert alert-success" role="alert">
+                <?php echo $_COOKIE['msj_usuario']; ?>
+              </div>
+                            
+            <?php } ?>
+
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>

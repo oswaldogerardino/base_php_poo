@@ -11,6 +11,7 @@
     $resultado= $usuario->BorrarUsuario($id);
 
     if($resultado){
+      setcookie("msj_usuario", "Borrado exitoso", time()+ 1,'/');
       header("Location: ./lista.php");
     }
   }

@@ -28,6 +28,8 @@
         $resultado = $usuario->CrearUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$contra);
 
         if($resultado){
+
+          setcookie("msj_usuario", "Registro exitoso", time()+ 1,'/');
           header("Location: ./lista.php");
         }
   

@@ -19,7 +19,7 @@
       if(!empty($contra) and strlen($contra) > 5 and $contra == $confirmar){
 
         $resultado = $usuario->ActualizarContrasena($contra,$_GET['id']);
-
+        setcookie("msj_usuario", "Contraseña actualizada", time()+ 1,'/');
         header("Location: ./lista.php");
   
       }
