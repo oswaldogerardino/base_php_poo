@@ -3,8 +3,8 @@
   if(isset($_POST['submit'])) {
 
     //Variables
-    $contra  = $_POST['contra'];
-    $correo  = $_POST['correo'];
+    $contra=$_POST['contra'];
+    $correo=$_POST['correo'];
     //Verificaciones de formulario
     /*
       1. Verificar si las contraseñas tienen por lo menos 6 caracteres.
