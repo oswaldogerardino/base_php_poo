@@ -6,7 +6,10 @@
 
   class ClaseGlobal {
     
-      private $databaseHost = 'localhost';
+      private $databaseHost = '127.0.0.1';
+      #private $databaseNombre = 'lamanzan_basephppoo';
+      #private $databaseNombreUsuario = 'lamanzan_oswaldo';
+      #private $databaseContrasena = 'Oswaldo1985$';
       private $databaseNombre = 'basephp';
       private $databaseNombreUsuario = 'root';
       private $databaseContrasena = '1234';
