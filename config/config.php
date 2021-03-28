@@ -23,8 +23,7 @@
       public function SesionStatus(){
   
         if(!isset($_SESSION['conectado']) or $_SESSION['conectado'] == false){
-          return var_dump($_SESSION);
-          //header("location: ../../vistas/acceso/login.php");
+          header("location: ../../vistas/acceso/login.php");
         }
   
       }
