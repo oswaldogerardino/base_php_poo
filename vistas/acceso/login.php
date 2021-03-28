@@ -1,12 +1,11 @@
-<?php include("../../clases/ClaseAcceso.php"); ?>
-
 <?php
-
+  include("../../clases/ClaseAcceso.php");
+  session_start();
   if(isset($_POST['submit'])) {
 
     //Variables
-    $contra  = mysqli_real_escape_string($acceso->mysqli, $_POST['contra']);
-    $correo  = mysqli_real_escape_string($acceso->mysqli, $_POST['correo']);
+    $contra  = $acceso->mysqli, $_POST['contra'];
+    $correo  = $acceso->mysqli, $_POST['correo'];
     //Verificaciones de formulario
     /*
       1. Verificar si las contraseñas tienen por lo menos 6 caracteres.
@@ -16,8 +15,6 @@
       if($acceso->ConsultaAcceso($correo,$contra) > 0){
         
         $datos= $acceso->ConsultarDatos($correo);
-
-        session_start();
 
         $_SESSION['correo']   = $correo;
         $_SESSION['nombre']   = $datos['nombre'];
