@@ -1,6 +1,8 @@
 <!--Header-->
-<?php include('../../includes/header.php'); ?>
-<?php include('../../clases/ClaseUsuario.php'); ?>
+<?php
+  include('../../includes/header.php');
+  include('../../clases/ClaseUsuario.php');
+?>
 <!-- Contenedor principal -->
 <div class="main-panel">
   <div class="content-wrapper">

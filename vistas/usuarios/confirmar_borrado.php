@@ -1,7 +1,8 @@
 <!--Header-->
-<?php include '../../includes/header.php' ?>
-<?php include("../../clases/ClaseUsuario.php"); ?>
 <?php
+
+  include('../../includes/header.php');
+  include("../../clases/ClaseUsuario.php");
 
   $datos= $usuario->ConsultarUsuario($_GET['id']);
 

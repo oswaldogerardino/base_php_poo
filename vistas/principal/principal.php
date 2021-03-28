@@ -1,7 +1,8 @@
 <!--Header-->
-<?php include '../../includes/header.php' ?>
-<?php include('../../clases/ClasePrincipal.php'); ?>
-
+<?php 
+  include('../../includes/header.php');
+  include('../../clases/ClasePrincipal.php');
+?>
 <!-- Contenedor principal -->
 <div class="main-panel">
   <div class="content-wrapper">
