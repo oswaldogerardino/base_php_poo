@@ -1,11 +1,10 @@
 <?php
   include("../../clases/ClaseAcceso.php");
-  session_start();
   if(isset($_POST['submit'])) {
 
     //Variables
-    $contra  = $acceso->mysqli, $_POST['contra'];
-    $correo  = $acceso->mysqli, $_POST['correo'];
+    $contra  = $_POST['contra'];
+    $correo  = $_POST['correo'];
     //Verificaciones de formulario
     /*
       1. Verificar si las contraseñas tienen por lo menos 6 caracteres.
@@ -14,6 +13,7 @@
     */
       if($acceso->ConsultaAcceso($correo,$contra) > 0){
         
+        session_start();
         $datos= $acceso->ConsultarDatos($correo);
 
         $_SESSION['correo']   = $correo;
