@@ -1,16 +1,19 @@
 <?php  
 
-  session_start();
+  if(!isset($_SESSION)){
+    session_start();
+  }
+
 
   class ClaseGlobal {
     
       private $databaseHost = '127.0.0.1';
-      private $databaseNombre = 'lamanzan_basephppoo';
-      private $databaseNombreUsuario = 'lamanzan_oswaldo';
-      private $databaseContrasena = 'Oswaldo1985$';
-      #private $databaseNombre = 'basephp';
-      #private $databaseNombreUsuario = 'root';
-      #private $databaseContrasena = '1234';
+      #private $databaseNombre = 'lamanzan_basephppoo';
+      #private $databaseNombreUsuario = 'lamanzan_oswaldo';
+      #private $databaseContrasena = 'Oswaldo1985$';
+      private $databaseNombre = 'basephp';
+      private $databaseNombreUsuario = 'root';
+      private $databaseContrasena = '1234';
       public $mysqli;
       public $resultado;
 
