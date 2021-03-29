@@ -27,6 +27,7 @@
 
     public function CerrarSesion() {
       
+	  session_unset();
       session_destroy();
   
     }
