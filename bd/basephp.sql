@@ -44,7 +44,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `cedula`, `correo`, `genero`, `fecha_nac`, `contrasena`) VALUES
-(18, 'oswaldo', 'gerardino', 123456, 'contact@oswscript.com', 'masculino', '2021-03-04', '25d55ad283aa400af464c76d713c07ad');
+(18, 'oswaldo', 'gerardino', 123456, 'oswaldo@oswaldo.com', 'masculino', '2021-03-04', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Índices para tablas volcadas

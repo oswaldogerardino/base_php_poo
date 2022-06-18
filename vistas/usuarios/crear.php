@@ -56,20 +56,8 @@
 
               if(isset($_POST['submit'])) {
 
-                  //Cedula no vacia
-                  if(empty($cedula)) {
-                    echo '
-                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        Cédula es obligatorio.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                    ';
-                  }
-
                   //Nombre no vacio
-                  elseif(empty($nombre)) {
+                  if(empty($nombre)) {
                     echo '
                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Nombre es obligatorio.
@@ -85,6 +73,30 @@
                     echo '
                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Apellido es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+
+                  //Cedula no vacia
+                  elseif(empty($cedula)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Cédula es obligatorio.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                    ';
+                  }
+
+                  //Cedula no vacia
+                  elseif(!is_numeric($cedula)) {
+                    echo '
+                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        La Cédula debe ser un numero.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>

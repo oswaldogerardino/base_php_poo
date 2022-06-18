@@ -52,7 +52,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.jpg" />
+    <link rel="shortcut icon" href="../../assets/images/login.jpg" />
   </head>
 
   <div class="container-scroller">
@@ -62,7 +62,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-center py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../assets/images/favicon.jpg" alt="logo">
+                <img src="../../assets/images/login.png" alt="logo">
               </div>
               <h4>Ingrese sus datos para continuar...</h4>
 
