@@ -4,8 +4,9 @@
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
 
+  //consultar al usuario por el id
   $datos= $usuario->ConsultarUsuario($_GET['id']);
-
+  
   if(isset($_POST['submit'])) {
 
     $id = $_GET['id'];

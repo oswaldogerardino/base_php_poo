@@ -30,8 +30,10 @@ if(!isset($_SESSION)){
         </div>
       </li>
     </ul>
+
     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
       <span class="ti-view-list"></span>
     </button>
+    
   </div>
 </nav>

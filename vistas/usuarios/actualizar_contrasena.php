@@ -46,7 +46,6 @@
 
               <p class="card-description">
                 - Todos los datos marcados con <code>(*)</code> son obligatorios.<br/>
-                - Si deja en blanco los campos <strong>Contraseña</strong> y <strong>Confirmar</strong>, se le asignara al nuevo usuario la clave por defecto <code>1234</code>.
               </p>
               <?php
 

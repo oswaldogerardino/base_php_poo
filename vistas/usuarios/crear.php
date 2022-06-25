@@ -35,7 +35,6 @@
   
       }
       
-
   }
 ?>
 <!-- Contenedor principal -->

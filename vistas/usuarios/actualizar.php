@@ -3,6 +3,7 @@
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
   
+  //consultar al usuario por el id
   if(isset($_GET['id'])){
     $datos= $usuario->ConsultarUsuario($_GET['id']);
   }
@@ -52,8 +53,7 @@
               <input type="hidden" name="submit" value="add" >
 
               <p class="card-description">
-                - Todos los datos marcados con <code>(*)</code> son obligatorios.<br/>
-                - Si deja en blanco los campos <strong>Contraseña</strong> y <strong>Confirmar</strong>, se le asignara al nuevo usuario la clave por defecto <code>123456</code>.
+                - Todos los datos marcados con <code>(*)</code> son obligatorios.<br/>.
               </p>
               <?php
 

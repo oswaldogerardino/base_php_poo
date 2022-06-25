@@ -66,7 +66,11 @@
                             &nbsp;
                             <a title="Actualizar datos" href="./actualizar.php?id=<?php echo $d['id']; ?>"><i class="ti-pencil"></i></a>
                             &nbsp;
+                            <?php  if($d['correo'] != $_SESSION['correo']){ ?>
                             <a title="Borrar registro" href="./confirmar_borrado.php?id=<?php echo $d['id']; ?>"><i class="ti-trash"></i></a>
+                            <?php }else{ ?>
+                              <a title="Borrar registro" href="#" onclick="javascript:alert('Aviso: No puede borrar su propio usuario!')"><i class="ti-trash"></i></a>
+                            <?php } ?>
                           </td>
                         </tr>
                       <?php } ?>

@@ -5,6 +5,7 @@
     //Variables
     $contra=$_POST['contra'];
     $correo=$_POST['correo'];
+
     //Verificaciones de formulario
     /*
       1. Verificar si las contraseñas tienen por lo menos 6 caracteres.
@@ -16,9 +17,9 @@
         session_start();
         $datos= $acceso->ConsultarDatos($correo);
 
-        $_SESSION['correo']   = $correo;
-        $_SESSION['nombre']   = $datos['nombre'];
-        $_SESSION['apellido'] = $datos['apellido'];
+        $_SESSION['correo']    = $correo;
+        $_SESSION['nombre']    = $datos['nombre'];
+        $_SESSION['apellido']  = $datos['apellido'];
         $_SESSION['conectado'] = true;
 
         header("Location: ../principal/principal.php ");
@@ -34,7 +35,7 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
