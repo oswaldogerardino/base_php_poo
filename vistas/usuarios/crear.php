@@ -259,6 +259,31 @@
                   </div>
                 </div>
               </div>
+
+              
+              <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Rol</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" name="rol">
+                      <?php
+                        if(isset($_POST['rol']) and $_POST['rol'] == "administrador"){
+                      ?>
+
+                        <option value="administrador">Administrador</option>
+                        <option value="usuario">Usuario</option>
+
+                      <?php }else{ ?>
+
+                        <option value="usuario">Usuario</option>
+                        <option value="administrador">Administrador</option>
+
+                      <?php } ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
               <div class="col-md-6">
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Fecha nac.</label>

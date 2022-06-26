@@ -64,8 +64,8 @@
         <div class="row w-100 mx-0">
           <div class="col-lg-8 mx-auto">
             <div class="auth-form-light text-center py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="../../assets/images/login.png" alt="logo">
+              <div>
+                <img src="../../assets/images/login.png" alt="logo"  width="30%">
               </div>
               <h4>Registre sus datos para entrar al sistema...</h4>
 
