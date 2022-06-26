@@ -20891,6 +20891,10 @@ dl li {
   text-align: center;
 }
 
+.brand-logo-mini{
+  font-size: 18px !important;
+}
+
 .navbar .navbar-brand-wrapper .brand-logo-mini img {
   width: calc(70px - 30px);
   max-width: 100%;

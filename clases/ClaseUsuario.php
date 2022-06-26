@@ -14,18 +14,18 @@
 
     }
 
-    public function CrearUsuario($nombre,$apellido,$cedula,$correo,$genero=null,$fecha_n=null,$contrasena) {
+    public function CrearUsuario($nombre,$apellido,$cedula,$correo,$genero=null,$fecha_n=null,$contrasena, $rol) {
       
-      $sql = "INSERT INTO usuarios(nombre,apellido,cedula,correo,genero,fecha_nac,contrasena) VALUES('".$nombre."','".$apellido."','".$cedula."','".$correo."','".$genero."','".$fecha_n."','".md5($contrasena)."')";
+      $sql = "INSERT INTO usuarios(nombre,apellido,cedula,correo,genero,fecha_nac,contrasena,rol) VALUES('".$nombre."','".$apellido."','".$cedula."','".$correo."','".$genero."','".$fecha_n."','".md5($contrasena)."','".$rol."')";
       $this->datos = mysqli_query($this->mysqli, $sql);
 
       return $this->datos;
   
     }
 
-    public function ActualizarUsuario($nombre=null,$apellido=null,$cedula,$correo,$genero=null,$fecha_n=null,$id) {
+    public function ActualizarUsuario($nombre=null,$apellido=null,$cedula,$correo,$genero=null,$fecha_n=null,$id, $rol) {
       
-      $this->datos = mysqli_query($this->mysqli, "UPDATE usuarios SET nombre='$nombre',apellido='$apellido',cedula='$cedula',correo='$correo',genero='$genero',fecha_nac='$fecha_n' WHERE id=$id");
+      $this->datos = mysqli_query($this->mysqli, "UPDATE usuarios SET nombre='$nombre',apellido='$apellido',cedula='$cedula',correo='$correo',genero='$genero',fecha_nac='$fecha_n',rol='$rol' WHERE id=$id");
       
       $this->datos;
   
@@ -60,5 +60,4 @@
   }
   
   $usuario = new ClaseUsuario();
-  $usuario->SesionStatus();
 ?>

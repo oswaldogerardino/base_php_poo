@@ -5,6 +5,7 @@
     //Variables
     $contra=$_POST['contra'];
     $correo=$_POST['correo'];
+
     //Verificaciones de formulario
     /*
       1. Verificar si las contraseñas tienen por lo menos 6 caracteres.
@@ -16,9 +17,9 @@
         session_start();
         $datos= $acceso->ConsultarDatos($correo);
 
-        $_SESSION['correo']   = $correo;
-        $_SESSION['nombre']   = $datos['nombre'];
-        $_SESSION['apellido'] = $datos['apellido'];
+        $_SESSION['correo']    = $correo;
+        $_SESSION['nombre']    = $datos['nombre'];
+        $_SESSION['apellido']  = $datos['apellido'];
         $_SESSION['conectado'] = true;
 
         header("Location: ../principal/principal.php ");
@@ -34,7 +35,7 @@
   }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags -->
@@ -52,7 +53,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.jpg" />
+    <link rel="shortcut icon" href="../../assets/images/login.jpg" />
   </head>
 
   <div class="container-scroller">
@@ -62,7 +63,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-center py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="../../assets/images/favicon.jpg" alt="logo">
+                <img src="../../assets/images/login.png" alt="logo">
               </div>
               <h4>Ingrese sus datos para continuar...</h4>
 
@@ -80,7 +81,7 @@
                 
               <?php } ?>
 
-              <form action="./login.php" method="POST" class="pt-3">
+              <form action="./login.php" method="POST" class="pt-3 pb-2">
                 <input type="hidden" name="submit" value="add" >
                 <div class="form-group">
                   <input name="correo" type="text" class="form-control form-control-lg" placeholder="Correo">
@@ -95,6 +96,7 @@
                 </div>
               </form>
 
+              <h6><a href="./registrar.php">Registrarme...</a></h6>
             </div>
           </div>
         </div>

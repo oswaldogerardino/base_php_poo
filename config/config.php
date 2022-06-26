@@ -8,9 +8,9 @@
   class ClaseGlobal {
     
       private $databaseHost = '127.0.0.1';
-      private $databaseNombre = 'basephp';
+      private $databaseNombre = 'base_php_poo';
       private $databaseNombreUsuario = 'root';
-      private $databaseContrasena = '1234';
+      private $databaseContrasena = '';
       public $mysqli;
       public $resultado;
 

@@ -13,7 +13,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- endinject -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.jpg" />
+    <link rel="shortcut icon" href="../../assets/images/login.jpg" />
   </head>
   <body>
     <!--Container scroller-->

@@ -2,6 +2,9 @@
 <?php
   include('../../includes/header.php');
   include('../../clases/ClaseUsuario.php');
+
+  //checkear el status de la session
+  $usuario->SesionStatus();
 ?>
 <!-- Contenedor principal -->
 <div class="main-panel">
@@ -41,6 +44,9 @@
                       Correo
                     </th>
                     <th>
+                      Rol
+                    </th>
+                    <th>
                       Opciones
                     </th>
                   </tr>
@@ -62,11 +68,18 @@
                           <a href="./actualizar.php?id=<?php echo $d['id']; ?>"><?php echo $d['correo']; ?></a>
                           </td>
                           <td>
+                          <a href="./actualizar.php?id=<?php echo $d['id']; ?>"><?php echo $d['rol']; ?></a>
+                          </td>
+                          <td>
                             <a title="Actualizar contraseña" href="./actualizar_contrasena.php?id=<?php echo $d['id']; ?>"><i class="ti-lock"></i></a>
                             &nbsp;
                             <a title="Actualizar datos" href="./actualizar.php?id=<?php echo $d['id']; ?>"><i class="ti-pencil"></i></a>
                             &nbsp;
+                            <?php  if($d['correo'] != $_SESSION['correo']){ ?>
                             <a title="Borrar registro" href="./confirmar_borrado.php?id=<?php echo $d['id']; ?>"><i class="ti-trash"></i></a>
+                            <?php }else{ ?>
+                              <a title="Borrar registro" href="#" onclick="javascript:alert('Aviso: No puede borrar su propio usuario!')"><i class="ti-trash"></i></a>
+                            <?php } ?>
                           </td>
                         </tr>
                       <?php } ?>
