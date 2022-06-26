@@ -3,6 +3,9 @@
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
   
+  //checkear el status de la session
+  $usuario->SesionStatus();
+
   //consultar al usuario por el id
   if(isset($_GET['id'])){
     $datos= $usuario->ConsultarUsuario($_GET['id']);
@@ -17,6 +20,7 @@
     $correo     = mysqli_real_escape_string($usuario->mysqli, $_POST['correo']);
     $genero     = mysqli_real_escape_string($usuario->mysqli, $_POST['genero']);
     $fecha_n    = mysqli_real_escape_string($usuario->mysqli, $_POST['fecha_nacimiento']);
+    $rol        = mysqli_real_escape_string($usuario->mysqli, $_POST['rol']);
     //Verificaciones de formulario
     /*
       1. Verificar si los campos obligatorios Cedula y Correo tienen datos.
@@ -28,7 +32,7 @@
 
       if(!empty($nombre) and !empty($apellido) and !empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0){
 
-        $resultado = $usuario->ActualizarUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$_GET['id']);
+        $resultado = $usuario->ActualizarUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$_GET['id'], $rol);
 
         setcookie("msj_usuario", "Actualización exitosa", time()+ 1,'/');
         header("Location: ./lista.php");
@@ -207,6 +211,29 @@
 
                           <option value="masculino">Masculino</option>
                           <option value="femenino">Femenino</option>
+
+                        <?php } ?>
+
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Rol</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="rol">
+                        <?php
+                          if($datos['rol'] == "administrador"){
+                        ?>
+
+                          <option value="administrador">Administrador</option>
+                          <option value="usuario">Usuario</option>
+
+                        <?php }else{ ?>
+
+                          <option value="usuario">Usuario</option>
+                          <option value="administrador">Administrador</option>
 
                         <?php } ?>
 

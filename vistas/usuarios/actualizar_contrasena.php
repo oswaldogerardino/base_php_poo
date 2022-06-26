@@ -4,6 +4,9 @@
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
   
+  //checkear el status de la session
+  $usuario->SesionStatus();
+  
   if(isset($_GET['id'])){
 
    $datos= $usuario->ConsultarUsuario($_GET['id']);

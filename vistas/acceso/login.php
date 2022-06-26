@@ -81,7 +81,7 @@
                 
               <?php } ?>
 
-              <form action="./login.php" method="POST" class="pt-3">
+              <form action="./login.php" method="POST" class="pt-3 pb-2">
                 <input type="hidden" name="submit" value="add" >
                 <div class="form-group">
                   <input name="correo" type="text" class="form-control form-control-lg" placeholder="Correo">
@@ -96,6 +96,7 @@
                 </div>
               </form>
 
+              <h6><a href="./registrar.php">Registrarme...</a></h6>
             </div>
           </div>
         </div>
