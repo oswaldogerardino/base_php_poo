@@ -1,7 +1,11 @@
 <!--Header-->
 <?php
+  
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
+  
+  //checkear el status de la session
+  $usuario->SesionStatus();
   
   if(isset($_POST['submit'])) {
 
@@ -11,6 +15,7 @@
     $cedula     = mysqli_real_escape_string($usuario->mysqli, $_POST['cedula']);
     $correo     = mysqli_real_escape_string($usuario->mysqli, $_POST['correo']);
     $genero     = mysqli_real_escape_string($usuario->mysqli, $_POST['genero']);
+    $rol        = mysqli_real_escape_string($usuario->mysqli, $_POST['rol']);
     $fecha_n    = mysqli_real_escape_string($usuario->mysqli, $_POST['fecha_nacimiento']);
     $contra     = mysqli_real_escape_string($usuario->mysqli, $_POST['contra']);
     $confirmar  = mysqli_real_escape_string($usuario->mysqli, $_POST['confirmar']);
@@ -25,7 +30,7 @@
 
       if(!empty($nombre) and !empty($apellido) and !empty($cedula) and $cedula_unica == 0 and !empty($correo) and $correo_unico == 0 and !empty($contra) and strlen($contra) > 5 and $contra == $confirmar and $correo_unico == 0){
 
-        $resultado = $usuario->CrearUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$contra);
+        $resultado = $usuario->CrearUsuario($nombre,$apellido,$cedula,$correo,$genero,$fecha_n,$contra, $rol);
 
         if($resultado){
 

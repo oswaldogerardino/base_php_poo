@@ -1,9 +1,12 @@
 <!--Header-->
 <?php
-
+  
   include('../../includes/header.php');
   include("../../clases/ClaseUsuario.php");
 
+  //checkear el status de la session
+  $usuario->SesionStatus();
+  
   //consultar al usuario por el id
   $datos= $usuario->ConsultarUsuario($_GET['id']);
   

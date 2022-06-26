@@ -2,6 +2,9 @@
 <?php
   include('../../includes/header.php');
   include('../../clases/ClaseUsuario.php');
+
+  //checkear el status de la session
+  $usuario->SesionStatus();
 ?>
 <!-- Contenedor principal -->
 <div class="main-panel">
@@ -41,6 +44,9 @@
                       Correo
                     </th>
                     <th>
+                      Rol
+                    </th>
+                    <th>
                       Opciones
                     </th>
                   </tr>
@@ -60,6 +66,9 @@
                           </td>
                           <td>
                           <a href="./actualizar.php?id=<?php echo $d['id']; ?>"><?php echo $d['correo']; ?></a>
+                          </td>
+                          <td>
+                          <a href="./actualizar.php?id=<?php echo $d['id']; ?>"><?php echo $d['rol']; ?></a>
                           </td>
                           <td>
                             <a title="Actualizar contraseña" href="./actualizar_contrasena.php?id=<?php echo $d['id']; ?>"><i class="ti-lock"></i></a>
