@@ -178,7 +178,7 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Cédula <code>(*)</code></label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="cedula" value="<?php echo $datos['cedula'] ?>"/>
+                      <input maxlength="8" type="text" class="form-control" name="cedula" value="<?php echo $datos['cedula'] ?>"/>
                     </div>
                   </div>
                 </div>
